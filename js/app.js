@@ -49,6 +49,7 @@ for (let section of allSections){
     //create li tag
     newLi = document.createElement("li");
     newLi.setAttribute("id",`menu-link-${x}`);
+    newLi.setAttribute("class",`menu__link`);
     newLi.addEventListener("click",console.log("test"));
     newLi.innerHTML = link;
     menuItems[x-1] = newLi;
@@ -95,16 +96,21 @@ for (let anchorItem of allAnchors){
 document.addEventListener("scroll", function(event){
         for (const section of allSections) {
         const box = section.getBoundingClientRect();
-
+console.log(section.id);
         if (box.top <= 200 && box.bottom >= 150) {
         //apply active state on current section and corresponding Nav link
         section.setAttribute("class","active");
         section.classList.add("highlight");
 
+        document.querySelector(`a[href='#${section.id}']`).classList.add("active");
+        document.querySelector(`#menu-link-${section.id}`.replace("section","")).classList.add("active");
+
         } else {
         //Remove active state from other section and corresponding Nav link
         section.setAttribute("class","");
         
+        document.querySelector(`a[href='#${section.id}']`).classList.remove("active");
+        document.querySelector(`#menu-link-${section.id}`.replace("section","")).classList.remove("active");
         }
         }
     })
