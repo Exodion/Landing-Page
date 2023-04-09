@@ -38,6 +38,7 @@ let allAnchors;
 // build the nav
 allSections = document.querySelectorAll("section");
 
+// adding sections to menu dynamically 
 for (let section of allSections){
     let heading = "";
     let ident = `section${x}`;
@@ -61,6 +62,8 @@ for (let section of allSections){
     x = x + 1;
 }
 
+// adding menu items
+
 for (let menuItem of menuItems){
 
         fragment.appendChild(menuItem);
@@ -69,7 +72,7 @@ for (let menuItem of menuItems){
 
 document.querySelector("#navbar__list").appendChild(fragment); 
 
-
+// scrolling effect after click
 
 allAnchors = document.querySelectorAll('a[href^="#"]');
 
