@@ -19,4 +19,4 @@ It is a responsive page with navigation. Active sections are highlighted by two 
 - /css/styles.css
 
 ## Acknowledgements
-Thanks you Udacity for this interesting project!
+Thank you Udacity for this interesting project!
